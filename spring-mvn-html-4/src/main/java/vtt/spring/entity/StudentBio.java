@@ -1,0 +1,69 @@
+package vtt.spring.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="stu_bio")
+public class StudentBio {
+
+	@Id
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="std")
+	private String std;
+	
+	@Column(name="age")
+	private int age;
+	
+	@Column(name="address")
+	private String address;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getStd() {
+		return std;
+	}
+
+	public void setStd(String std) {
+		this.std = std;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	
+}
