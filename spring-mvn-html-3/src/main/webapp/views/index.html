@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" > -->
+</head>
+<body>
+	<h1 class="bg-info text-center">I am HTML</h1>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row bg-warning">
+			<!-- <div class="col-12"> -->
+				<div class="col-6">
+					<form action="g">
+						<input class="btn btn-success" type="submit" value="Get" /> 
+					</form>
+				</div>
+				<div class="col-6">
+					<button class="btn btn-info" id="p">Post</button>
+				</div>
+			<!-- </div> -->
+			</div>
+		</div>
+	</div>
+	<script src="webjars/jquery/3.4.0/jquery.min.js"></script>
+	<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$('#p').click(function(){
+			var dt = {name : 'rohini'};
+			// var id =  102;
+			dt = JSON.stringify(dt);
+			console.log(typeof(dt));
+			$.ajax({
+				type : 'POST',
+				url : 'p',
+				data : dt,
+				contentType : 'application/json; charset=UTF-8',
+				success : function(response)
+				{
+					console.log(response);
+					alert(response.name);
+				},
+				error : function()
+				{
+					alert('Error');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
